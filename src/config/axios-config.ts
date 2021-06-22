@@ -1,8 +1,6 @@
 import axios, { AxiosRequestConfig } from "axios";
 import { getAccessToken } from "./accessToken";
 
-axios.defaults.withCredentials = true;
-
 const instance = axios.create({
   baseURL: `http://localhost:4000`,
 });
@@ -18,7 +16,5 @@ const errorConfig = (error: any) => {
 };
 
 instance.interceptors.request.use(requestConfig, errorConfig);
-
-instance.defaults.withCredentials = true;
 
 export default instance;

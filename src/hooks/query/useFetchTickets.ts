@@ -9,7 +9,8 @@ export const useMyTickets = () => {
   };
   const { data, isLoading, isSuccess, isError } = useQuery(
     "my-tickets",
-    getMyTickets
+    getMyTickets,
+    { retry: 1 }
   );
   return { data, loading: isLoading, success: isSuccess, isError };
 };

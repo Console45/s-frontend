@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from "axios";
 import { getAccessToken } from "./accessToken";
 
 const instance = axios.create({
-  baseURL: `http://localhost:4000`,
+  baseURL: `https://srides.herokuapp.com`,
 });
 
 export const requestConfig = (request: AxiosRequestConfig) => {

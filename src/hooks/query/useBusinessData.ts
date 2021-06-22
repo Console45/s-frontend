@@ -9,7 +9,8 @@ export const useBusinessData = () => {
   };
   const { data, isLoading, isSuccess, isError } = useQuery(
     "business-data",
-    getBusinessData
+    getBusinessData,
+    { retry: 1 }
   );
   return { data, loading: isLoading, success: isSuccess, isError };
 };

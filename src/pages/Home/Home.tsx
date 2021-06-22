@@ -63,7 +63,7 @@ export const Home: FC<HomeProps> = ({ businessData }) => {
                         <img src={tickets} alt="" />
                       </div>
                       <div className="caption">
-                        <h3>{businessData.tickets}</h3>
+                        <h3>{businessData ? businessData.tickets : "+"}</h3>
                         <p>Tickets Generated</p>
                       </div>
                     </div>
@@ -72,7 +72,7 @@ export const Home: FC<HomeProps> = ({ businessData }) => {
                         <img src={team} alt="" />
                       </div>
                       <div className="caption">
-                        <h3>{businessData.users}</h3>
+                        <h3>{businessData ? businessData.users : "+"}</h3>
                         <p>Users</p>
                       </div>
                     </div>
@@ -81,7 +81,7 @@ export const Home: FC<HomeProps> = ({ businessData }) => {
                         <img src={conductor} alt="" />
                       </div>
                       <div className="caption">
-                        <h3>{businessData.conductors}</h3>
+                        <h3>{businessData ? businessData.conductors : "+"}</h3>
                         <p>Bus Conductors</p>
                       </div>
                     </div>

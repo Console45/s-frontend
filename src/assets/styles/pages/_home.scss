@@ -26,6 +26,30 @@
             }
         }
 
+        .milestone-section {
+            margin-bottom: 50px;
+
+            .milestone-img {
+                margin-top: 50px;
+
+                img {
+                    width: 100px;
+                }
+
+            }
+
+            .caption {
+                margin-top: 20px;
+
+                p {
+                    margin-top: 15px;
+                    font-size: 18px;
+                    color: colors(blue-gray);
+
+                }
+            }
+        }
+
         .abt-text {
             margin-top: 50px;
             text-align: center;
@@ -92,7 +116,7 @@
 
             }
         }
-        
+
 
         .generate-ticket {
             margin-top: 50px;

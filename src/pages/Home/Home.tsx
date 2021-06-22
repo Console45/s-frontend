@@ -5,6 +5,9 @@ import { NavModal } from "../../components/NavModal";
 import busStop from "../../assets/images/undraw_Bus_stop_re_h8ej(1).svg";
 import { Footer } from "../../components/Footer";
 import { TicketGeneratingForm } from "./TicketGeneratingForm";
+import conductor from "../../assets/images/conductor.svg";
+import team from "../../assets/images/team.svg";
+import tickets from "../../assets/images/tickets.svg";
 
 interface HomeProps {
   businessData: any;
@@ -56,9 +59,33 @@ export const Home: FC<HomeProps> = ({ businessData }) => {
                 <div className="header-title">
                   <h1 className="text-center">Our Milestones</h1>
                   <div className="row">
-                    <div className="col-12 col-md-4"></div>
-                    <div className="col-12 col-md-4"></div>
-                    <div className="col-12 col-md-4"></div>
+                    <div className="col-12 col-md-4">
+                      <div className="milestone-img">
+                        <img src={tickets} alt="" />
+                      </div>
+                      <div className="caption">
+                        <h3>{businessData.tickets}</h3>
+                        <p>Tickets Generated</p>
+                      </div>
+                    </div>
+                    <div className="col-12 col-md-4">
+                      <div className="milestone-img">
+                        <img src={team} alt="" />
+                      </div>
+                      <div className="caption">
+                        <h3>{businessData.users}</h3>
+                        <p>Users</p>
+                      </div>
+                    </div>
+                    <div className="col-12 col-md-4">
+                      <div className="milestone-img">
+                        <img src={conductor} alt="" />
+                      </div>
+                      <div className="caption">
+                        <h3>{businessData.conductors}</h3>
+                        <p>Bus Conductors</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

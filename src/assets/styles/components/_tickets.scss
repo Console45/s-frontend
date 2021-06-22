@@ -97,6 +97,7 @@
 
 .tickets-modal {
     z-index: 1000;
+    overflow: auto;
     position: fixed;
     padding-top: 100px;
 }

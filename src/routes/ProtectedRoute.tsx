@@ -21,11 +21,13 @@ export const ProtectedRoute: FC<ProtectedRouteProps> = ({
   // if (loading) return <Loader />;
 
   if (logoutLoading) return <Loader />;
-  return hasToken() ? (
+  // return hasToken() ? (
+  return (
     <Route exact path={path}>
       <Component {...props} />
     </Route>
-  ) : (
-    <Redirect to={{ pathname: "/login" }} />
   );
+  // ) : (
+  //   <Redirect to={{ pathname: "/login" }} />
+  // );
 };

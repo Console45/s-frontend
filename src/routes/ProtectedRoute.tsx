@@ -1,8 +1,8 @@
 import { FC } from "react";
-import { Redirect, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { Loader } from "../components/Loader";
 import { useStore } from "../hooks/useStore";
-import { hasToken } from "../config/accessToken";
+// import { hasToken } from "../config/accessToken";
 
 interface ProtectedRouteProps {
   component: any;

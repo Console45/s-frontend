@@ -1,4 +1,4 @@
-import { setAccessToken } from "./../../config/accessToken";
+// import { setAccessToken } from "./../../config/accessToken";
 import { useMutation, useQueryClient } from "react-query";
 import { useHistory } from "react-router-dom";
 import axios from "../../config/axios-config";

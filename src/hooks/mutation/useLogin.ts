@@ -24,7 +24,8 @@ export const useLogin = () => {
 
   const { mutate, isLoading, error } = useMutation(loginUser, {
     onSuccess: async ({ data }) => {
-      setAccessToken(data.accessToken);
+      // setAccessToken(data.accessToken);
+      console.log(data);
       setUser(data.user);
       queryClient.invalidateQueries("user");
       history.push("/");

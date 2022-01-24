@@ -14,19 +14,16 @@ interface LoginFormProps {
 export const LoginForm: FC<LoginFormProps> = ({ loading, mutate }) => {
   const [passwordVisible, setPasswordVisible] = useState<boolean>(false);
   const validationSchema = Yup.object().shape({
-    studentId: Yup.string()
-      .min(8, "Invalid Id")
-      .max(8, "Invalid Id")
-      .required("Required"),
+    email: Yup.string().email().required("Required"),
     password: Yup.string().min(6, "Too Short!").required("Required"),
   });
   const formik = useFormik({
     initialValues: {
-      studentId: "",
+      email: "",
       password: "",
     },
-    onSubmit: async ({ studentId, password }) => {
-      await mutate({ studentId, password });
+    onSubmit: async ({ email, password }) => {
+      await mutate({ email, password });
     },
     validationSchema,
   });
@@ -34,18 +31,18 @@ export const LoginForm: FC<LoginFormProps> = ({ loading, mutate }) => {
     <form onSubmit={formik.handleSubmit}>
       <div>
         <input
-          id="studentId"
-          name="studentId"
+          id="email"
+          name="email"
           inputMode="numeric"
           className="auth-input"
           placeholder="Student Id"
           onBlur={formik.handleBlur}
           onChange={formik.handleChange}
-          value={formik.values.studentId}
+          value={formik.values.email}
         />
-        {formik.touched.studentId && formik.errors.studentId ? (
+        {formik.touched.email && formik.errors.email ? (
           <FadeIn>
-            <div className="error">{formik.errors.studentId}</div>
+            <div className="error">{formik.errors.email}</div>
           </FadeIn>
         ) : null}
         <div className="password">
@@ -62,7 +59,7 @@ export const LoginForm: FC<LoginFormProps> = ({ loading, mutate }) => {
           />
           <img
             src={passwordVisible ? notVisible : visible}
-            onClick={() => setPasswordVisible(prevState => !prevState)}
+            onClick={() => setPasswordVisible((prevState) => !prevState)}
             alt=""
           />
         </div>

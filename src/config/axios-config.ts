@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from "axios";
 import { getAccessToken } from "./accessToken";
 
 const instance = axios.create({
-  baseURL: `https://srides.herokuapp.com`,
+  baseURL: `https://bezomoney-portfolio-backend.onrender.com`,
 });
 
 export const requestConfig = (request: AxiosRequestConfig) => {

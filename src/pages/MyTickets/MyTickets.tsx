@@ -9,6 +9,7 @@ import { EmptyOrders } from "../../components/EmptyOrders";
 import { TicketsTable } from "./TicketsTable";
 import TicketsModal from "../../components/TicketsModal";
 import Ticket from "../../components/Ticket";
+import { useUser } from "../../hooks/query/useUser";
 
 interface MyTicketsProps {}
 
@@ -21,9 +22,10 @@ const MyTickets: FC<MyTicketsProps> = () => {
   const closeFullScreenModal = (): void => {
     setShowFullScreenModal(false);
   };
+  const { data: userData } = useUser();
+  console.log(userData);
 
   const { loading, data } = useMyTickets();
-
   return (
     <div className="tickets">
       {showFullScreenModal ? (
